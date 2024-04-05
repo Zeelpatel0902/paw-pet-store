@@ -1,0 +1,46 @@
+from django.urls import path
+from happypawpetstore_Client import client_views
+
+urlpatterns = [
+    path('show_home/', client_views.home),
+    path('c_login/', client_views.c_login),
+    path('c_logout/',client_views.client_logout),
+    path('register/', client_views.c_register),
+    path('c_forgot/', client_views.c_forgotpass),
+    path('client_otp/', client_views.c_sendotp),
+    path('c_reset/', client_views.c_reset_password),
+    path('select_profile/',client_views.client_edit),
+    path('update_profile/',client_views.client_update),
+    path('client_header_menu/', client_views.load_menu),
+    path('client_header_menu1/', client_views.load_menu1),
+    path('shop/<int:id>', client_views.shop),
+    path('pro_det/<int:id>',client_views.pro_detail),
+    path('insert_feedback/', client_views.insert_feedback),
+    path('cart/',client_views.c_cart),
+    path('del_cart/<int:id>',client_views.delete_c_cart),
+    path('wishlist/',client_views.c_wishlist),
+    path('del_wishlist/<int:id>',client_views.delete_c_wishlist),
+    path('i_wishlist/', client_views.insert_wishlist),
+    path('insert_cart/<int:id>', client_views.insert_cart),
+    path('clear_cart/', client_views.clear_cart),
+    path('c_order/',client_views.c_order),
+    path('c_item/<int:id>',client_views.c_orderitem),
+    path('update_cart/<int:id>',client_views.update_quantity),
+    path('check_out/',client_views.checkout),
+    path('placeorder/<int:total>',client_views.place_order),
+    path('shelter/',client_views.c_shelter),
+    path('search_product/', client_views.autosuggest, name='pro_search'),
+    path('search12/', client_views.search),
+    path('doctor/',client_views.c_doctor),
+    path('doctor_detail/<int:id>',client_views.doctor_detail),
+    path('c_appoint/<int:id>',client_views.c_appointment),
+    path('appoint_detail/',client_views.all_appointment),
+    path('about/',client_views.about_us),
+    path('sucess_pay/<int:id>',client_views.sucess_pay),
+    path('fail_pay/<int:id>',client_views.fail_pay),
+    path('gallery/',client_views.c_gallery),
+    path('contact/',client_views.contact_us),
+
+
+
+]
