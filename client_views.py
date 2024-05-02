@@ -9,10 +9,10 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.conf import settings
 from django.core.mail import send_mail
 import sys
-import random
 
 # Create your views here.
 from happypawpetstore_Client.cart import client_Cart
+import secrets
 
 
 def home(request):
@@ -93,7 +93,7 @@ def c_forgotpass(request):
 
 
 def c_sendotp(request):
-    otp1 = random.randint(10000, 99999)
+    otp1 = secrets.SystemRandom().randint(10000, 99999)
     e = request.POST['email']
 
     request.session['temail'] = e
