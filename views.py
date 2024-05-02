@@ -9,7 +9,6 @@ from rest_framework.response import Response
 from django.views.generic import View
 
 import sys
-import random
 
 # Create your views here.
 from happypawpetstore_Admin.forms import CustForm, orderform, shelterform, doctorform, categoryform, subcategoryform, \
@@ -19,6 +18,7 @@ from happypawpetstore_Admin.models import customer, shelter_home, doctor, catego
 
 # <--------Data Show of Data Dictionary------->
 from happypawpetstore_Admin.function import handle_upload_file
+import secrets
 
 
 def show_user(request):
@@ -680,7 +680,7 @@ def forgotpassword(request):
 
 
 def sendotp(request):
-    otp1 = random.randint(10000, 99999)
+    otp1 = secrets.SystemRandom().randint(10000, 99999)
     e = request.POST['email']
 
     request.session['temail'] = e
